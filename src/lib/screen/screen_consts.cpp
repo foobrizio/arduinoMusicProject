@@ -1,0 +1,2 @@
+#define SCREEN_ADDRESS 0x27
+#define DISPLAY_SIZE 16
