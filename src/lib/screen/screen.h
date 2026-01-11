@@ -11,5 +11,7 @@ void lcd_send_byte(uint8_t byte, uint8_t rs);
 void lcd_set_cursor(uint8_t row, uint8_t col);
 void lcd_init();
 void lcd_write_word(char* word, bool up);
+void lcd_write_word_centered(char* word, bool up);
+void lcd_erase_line(bool up);
 
 void screen_init();

@@ -101,6 +101,33 @@ void lcd_write_word(char* word, bool up) {
   _delay_ms(50);
 }
 
+void lcd_write_word_centered(char* word, bool up) {
+  int len = strlen(word);
+  int start_col = (16 - len) / 2;
+  if(up){
+    lcd_set_cursor(0, 0);
+  } else {
+    lcd_set_cursor(1, 0);
+  }
+  // Clear the line before writing
+  for(int i = 0; i< start_col; i++){
+    lcd_send_byte(' ', 1);
+  }
+  // Write the word
+  for(int i = 0; i< len; i++){
+    lcd_send_byte(word[i], 1);
+  }
+  // Clear the rest of the line
+  for(int i = start_col + len; i< 16; i++){
+    lcd_send_byte(' ', 1);
+  }
+  _delay_ms(50);
+}
+
+void lcd_erase_line(bool up) {
+  lcd_write_word("               ", up); // 16 spazi per cancellare la riga
+}
+
 void screen_init() {
   i2c_init();
   lcd_init();

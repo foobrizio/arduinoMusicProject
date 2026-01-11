@@ -24,8 +24,6 @@ int main(void){
   led_init();
   screen_init();
   buttons_init();
-
-  lcd_write_word("accordatore", false);
   while(1){
     led_toggle();
     _delay_ms(1000);
