@@ -46,7 +46,7 @@ void handle_right_button(){
   if(strcmp(current_mode, "menu") != 0){
     if(strcmp(current_mode, "metronomo") == 0){
       //siamo nel menu metronomo, questo pulsante serve per velocizzare il tempo
-      metron_right_button_pressed();
+      metronome_right_button_pressed();
     }
     else if (strcmp(current_mode, "accordatore") == 0){
       //siamo nel menu accordatore
@@ -70,18 +70,27 @@ void handle_central_button(){
     lcd_erase_line(false);
     if(strcmp(current_mode, "metronomo") == 0){
       //siamo nel menu metronomo
-      metron_central_button_pressed();
+      metronome_start();
     }
     else if(strcmp(current_mode, "accordatore") == 0){
       //siamo nel menu accordatore
-      tuner_central_button_pressed();
+      tuner_start();
     }
     else if(strcmp(current_mode, "theremin") == 0){
       //siamo nel menu theremin
-      theremin_central_button_pressed();
+      theremin_start();
     }
   }
   else{
+    if(strcmp(current_mode, "metronomo") == 0){
+      metronome_stop();
+    }
+    else if(strcmp(current_mode, "accordatore") == 0){
+      tuner_stop();
+    }
+    else if(strcmp(current_mode, "theremin") == 0){
+      theremin_stop();
+    }
     strcpy(current_mode, "menu");
     lcd_write_word(menu_items[current_menu_index], false);
   }
@@ -92,7 +101,7 @@ void handle_left_button(){
   if(strcmp(current_mode, "menu") != 0){
     if(strcmp(current_mode, "metronomo") == 0){
       //siamo nel menu metronomo, questo pulsante serve per rallentare il tempo
-      metron_left_button_pressed();
+      metronome_left_button_pressed();
     }
     else if(strcmp(current_mode, "accordatore") == 0){
       //siamo nel menu accordatore
