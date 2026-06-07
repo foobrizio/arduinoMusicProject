@@ -115,8 +115,7 @@ void handle_press_hold_central_button(){
       metronome_central_button_press_hold();
     }
     else if(strcmp(current_mode, "accordatore") == 0){
-      //siamo nel menu accordatore
-
+      tuner_central_button_press_hold();
     }
     else if(strcmp(current_mode, "theremin") == 0){
       //siamo nel menu theremin

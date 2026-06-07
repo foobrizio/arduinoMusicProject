@@ -24,8 +24,8 @@ void uint16_to_str(uint16_t n, char* buf) {
     buf[j] = '\0';
 }
 
-void str_concat(char* dst, const char* left, const char* right) {
-    while (*left != '\0') *dst++ = *left++;
-    while (*right != '\0') *dst++ = *right++;
-    *dst = '\0';
+void str_concat(char* buffer, const char* left, const char* right) {
+    while (*left != '\0') *buffer++ = *left++;
+    while (*right != '\0') *buffer++ = *right++;
+    *buffer = '\0';
 }

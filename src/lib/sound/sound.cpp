@@ -1,6 +1,7 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include "pitches.h"
+#include "lib/util/constants.h"
 
 #define OUTPUT_PIN PB1
 #define DEFAULT_FREQUENCY A4

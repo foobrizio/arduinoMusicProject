@@ -83,7 +83,7 @@ void lcd_init() {
 /** 
  * Scrive una parola sulla riga superiore o inferiore, in base al valore del booleano
  */
-void lcd_write_word(char* word, bool up) {
+void lcd_write_word(const char* word, bool up) {
   if(up){
     lcd_set_cursor(0,0);
   } else {
@@ -101,7 +101,7 @@ void lcd_write_word(char* word, bool up) {
   _delay_ms(50);
 }
 
-void lcd_write_word_centered(char* word, bool up) {
+void lcd_write_word_centered(const char* word, bool up) {
   int len = strlen(word);
   int start_col = (16 - len) / 2;
   if(up){
