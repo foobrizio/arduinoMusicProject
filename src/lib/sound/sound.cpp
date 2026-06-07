@@ -1,11 +1,16 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include "pitches.h"
 
 #define OUTPUT_PIN PB1
-#define DEFAULT_FREQUENCY 440
+#define DEFAULT_FREQUENCY A4
 
 
 uint16_t current_frequency = DEFAULT_FREQUENCY;
+
+/* 
+ * Il generatore di suoni utilizza il Timer1
+ */
 
 void set_frequency(uint16_t frequency){
     current_frequency = frequency;

@@ -1,9 +1,9 @@
 #include <avr/io.h>
 
-void uint8_to_str(uint8_t n, char* buf) {
-    uint8_t i = 0;
-    char tmp[4];
-    
+void uint16_to_str(uint16_t n, char* buf) {
+    uint16_t i = 0;
+    char tmp[6];
+
     if (n == 0) {
         buf[0] = '0';
         buf[1] = '\0';
@@ -17,7 +17,7 @@ void uint8_to_str(uint8_t n, char* buf) {
     }
 
     // invertile nel buffer finale
-    uint8_t j = 0;
+    uint16_t j = 0;
     while (i > 0) {
         buf[j++] = tmp[--i];
     }
